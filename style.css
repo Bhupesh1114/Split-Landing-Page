@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+:root {
+  --left-bg-color: rgba(160, 160, 13, 0.5);
+  --right-bg-color: rgba(204, 222, 229, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+h1 {
+  font-size: 4rem;
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform:translateX(-50%);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+
+.split.left h1{
+    color: white;
+}
+
+
+.btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left:50%;
+    top:40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 2px;
+    font-size: 15px;
+    font-weight:bold;
+    width: 150px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+
+.split.left .btn:hover{
+    background-color:green;
+}
+
+.split.right .btn:hover{
+    background-color: rgba(215, 80, 191, 1);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+
+.split {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url("https://cdn.mos.cms.futurecdn.net/Z8nusx9gCc844LMcZCziJW.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.split.right {
+  right: 0;
+  background: url("https://compass-ssl.xbox.com/assets/6a/31/6a31393d-b0cc-4833-8e82-fd3a2c6b6e19.jpg?n=FH4_GLP-Page-Hero-1084_1920x1080_02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.split.left , .split.right , .split.left::before , .split.right::before{
+    transition: all 1.5s ease-in-out;
+}
+
+
+
+
+.hover-left .left{
+    width:75%;
+}
+
+.hover-left .right{
+    width: 25%;
+}
+
+.hover-right .right{
+    width:75%;
+}
+
+.hover-right .left{
+    width: 25%;
+}
+
+@media(max-width:800px){
+    h1{
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn{
+        padding: 1.2rem;
+        width: 12rem;
+
+    }
+}
